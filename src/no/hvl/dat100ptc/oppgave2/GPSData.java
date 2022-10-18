@@ -10,9 +10,12 @@ public class GPSData {
 
 	public GPSData(int n) {
 
+		gpspoints = new GPSPoint[n];
+		antall = 0;
+		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.construtor("GPSData"));
+		//throw new UnsupportedOperationException(TODO.construtor("GPSData"));
 
 		// TODO - SLUTT
 	}
@@ -24,10 +27,17 @@ public class GPSData {
 	protected boolean insertGPS(GPSPoint gpspoint) {
 
 		boolean inserted = false;
+		
+		if (antall < gpspoints.length) {
+			gpspoints[antall] = gpspoint;
+			antall++;
+			inserted = true;
+		}
+		return inserted;
 
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		//throw new UnsupportedOperationException(TODO.method());
 
 		// TODO - SLUTT
 	}
@@ -35,10 +45,20 @@ public class GPSData {
 	public boolean insert(String time, String latitude, String longitude, String elevation) {
 
 		GPSPoint gpspoint;
-
+		
+		int time1 = GPSDataConverter.toSeconds(time);
+		Double latitude1 = Double.parseDouble(latitude);
+		Double longitude1 = Double.parseDouble(longitude);
+		Double elevation1 = Double.parseDouble(elevation);
+		
+		gpspoint = new GPSPoint(time1,latitude1,longitude1,elevation1);
+		
+		boolean inserted = insertGPS(gpspoint);
+		
+		return inserted;
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		//throw new UnsupportedOperationException(TODO.method());
 
 		// TODO - SLUTT
 		
@@ -50,7 +70,7 @@ public class GPSData {
 
 		// TODO - START
 
-		throw new UnsupportedOperationException(TODO.method());
+		//throw new UnsupportedOperationException(TODO.method());
 
 		// TODO - SLUTT
 		
