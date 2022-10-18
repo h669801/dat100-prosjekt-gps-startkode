@@ -83,7 +83,13 @@ public class ShowRoute extends EasyGraphics {
 			int x = (int)((gpspoints[i].getLongitude()-minLong)*xstep);
 			drawCircle(x , (ybase-y) , 1);
 		}
-		
+		for (int j = 0; j < gpspoints.length-1; j++) {
+			int y = (int)((gpspoints[j].getLatitude()-minLat)*ystep);
+			int x = (int)((gpspoints[j].getLongitude()-minLong)*xstep);
+			int x2 = (int)((gpspoints[j+1].getLongitude()-minLong)*xstep);
+			int y2 = (int)((gpspoints[j+1].getLatitude()-minLat)*ystep);
+			drawLine(x, ybase-y, x2, ybase-y2);
+		}
 		
 		// TODO - START
 		
@@ -141,10 +147,6 @@ public class ShowRoute extends EasyGraphics {
 		i++;
 		
 		drawString(energy1, MARGIN,  TEXTDISTANCE*i);
-//		i++;
-		
-//		drawString(gpscomputer.displayStatistics(), MARGIN, MAPYSIZE - MARGIN*i);
-//		i++;
 		
 		// TODO - START
 		

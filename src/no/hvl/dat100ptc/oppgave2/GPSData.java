@@ -67,14 +67,18 @@ public class GPSData {
 	public void print() {
 
 		System.out.println("====== Konvertert GPS Data - START ======");
-
+		for (int i = 0; i < gpspoints.length; i++) {
+			String gpspoint = gpspoints[i].toString();
+			System.out.println(gpspoint);
+		}
+		
 		// TODO - START
 
 		//throw new UnsupportedOperationException(TODO.method());
 
 		// TODO - SLUTT
 		
-		// System.out.println("====== Konvertert GPS Data - SLUTT ======");
+		System.out.println("====== Konvertert GPS Data - SLUTT ======");
 
 	}
 }

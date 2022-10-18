@@ -34,7 +34,6 @@ public class GPSComputer {
 		for (int i = 0; i < gpspoints.length-1; i++) {
 			distance += GPSUtils.distance(gpspoints[i], gpspoints[i+1]);
 		}
-//		System.out.println(distance);
 		return distance;
 			
 		// TODO - START
@@ -89,7 +88,6 @@ public class GPSComputer {
 		
 		double f = 0;
 		double[] speed = new double[gpspoints.length-1];
-//		GPSUtils[] test = new GPSUtils[0];
 		
 		for (int i = 0; i < gpspoints.length-1; i++) {
 			f = GPSUtils.speed(gpspoints[i], gpspoints[i+1]);
@@ -125,12 +123,6 @@ public class GPSComputer {
 
 		double average = 0;
 		average = (totalDistance()/totalTime())*3.6;
-//		for (int i = 0; i < gpspoints.length-1; i++) {
-			
-//			speeds = GPSUtils.speed(gpspoints[i], gpspoints[i+1]);
-//			average += speeds;
-//			avg = average / (i+1);
-//		}
 		
 		return average;
 		
@@ -163,7 +155,6 @@ public class GPSComputer {
 		double met = 0;		
 		double speedmph = speed * MS;
 		
-//		met = kcal / (weight * secs);
 		
 		if (speedmph < 10) {
 			met = 4;

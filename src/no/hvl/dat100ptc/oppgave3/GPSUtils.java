@@ -89,8 +89,6 @@ public class GPSUtils {
 		latitude2 = gpspoint2.getLatitude();
 		longitude2 = gpspoint2.getLongitude();
 		
-//		double dLat = (latitude2 - latitude1) * Math.PI / 180.0;
-//		double dLon = (longitude2 - longitude1) * Math.PI / 180.0;
 
 		double a = pow(sin(toRadians(latitude2-latitude1) / 2), 2) + pow(sin(toRadians(longitude2-longitude1) / 2), 2) * cos(toRadians(latitude1)) * cos(toRadians(latitude2));
 		double c = 2 * (atan2(sqrt(a), sqrt(1-a)));
@@ -123,15 +121,6 @@ public class GPSUtils {
 		speed = p / secs;
 		
 		return speed;
-		
-//		double lat1 = gpspoint1.getLatitude();
-//		double long1 = gpspoint1.getLongitude();
-//		double lat2 = gpspoint2.getLatitude();
-//		double long2 = gpspoint2.getLongitude();
-//		
-//		double dist = lat2 - lat1 + long2 - long1;
-		
-		//double g1 = distance(lat1, long1);
 
 		// TODO - START
 
